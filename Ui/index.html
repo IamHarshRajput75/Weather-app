@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Main Search Section -->
+    <div class="search-section">
+      <div class="search-header">
+        <h1>🌤️ Weather Forecast</h1>
+        <p>Get weather forecast for any city</p>
+      </div>
+      
+      <div class="search-container">
+        <form id="searchForm">
+          <input type="text" id="cityInput" placeholder="Enter city name" required />
+          <input type="number" id="daysInput" min="1" max="7" value="3" placeholder="Days" required />
+          <button type="submit" id="searchBtn">
+            <span id="btnText">Get Forecast</span>
+            <div id="loader" class="loader hidden"></div>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Results Section (Initially Hidden) -->
+    <div id="resultsSection" class="results-section hidden">
+      <header class="weather-header">
+        <div class="location">
+          <h2 id="city"></h2>
+          <div class="region-country">
+            <span id="region"></span>, <span id="country"></span>
+          </div>
+        </div>
+        <div class="current-weather">
+          <div class="temp">
+            <span id="temperature"></span>
+            <span class="unit">°C</span>
+          </div>
+          <div class="condition">
+            <img id="weather-icon" src="https://cdn-icons-png.flaticon.com/512/1163/1163624.png" alt="Weather Icon">
+            <p id="condition"></p>
+          </div>
+        </div>
+      </header>
+
+      <section class="forecast">
+        <h3>Daily Forecast</h3>
+        <div class="cards" id="forecastCards">
+          <!-- Cards will be inserted here -->
+        </div>
+      </section>
+
+      <!-- Search Again Button -->
+      <div class="search-again">
+        <button id="searchAgainBtn">Search Another City</button>
+      </div>
+    </div>
+
+    <!-- Error Message -->
+    <div id="errorSection" class="error-section hidden">
+      <div class="error-content">
+        <h3>❌ Error</h3>
+        <p id="errorMessage">Unable to fetch weather data. Please try again.</p>
+        <button id="retryBtn">Try Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
